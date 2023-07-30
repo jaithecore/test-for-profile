@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 random
 
 ## Getting Started
+update
 
 First, run the development server:
 
