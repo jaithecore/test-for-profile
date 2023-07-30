@@ -1,4 +1,4 @@
-name: Deploy NextJS Course Site to GitHub Pages
+.name: Deploy NextJS Course Site to GitHub Pages
 
 on:
   push:
