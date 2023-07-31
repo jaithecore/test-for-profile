@@ -1,27 +1,24 @@
-# This is a GitHub action workflow that installs a package by using "npm install" and then "npm run export" and then pushes the "out" directory to "gh-pages" branch
-
-name: Deploy to GitHub Pages
+name: Deploy NextJS Course Site to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build and export
-        run: npm run export
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+      - uses: actions/checkout@master
+      - name: npm install, export
+        run: |
+          npm install
+          npm run export
+      - name: Deploy site to gh-pages branch
+        uses: crazy-max/ghaction-github-pages@v2
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: out # The folder the action should deploy.
+          target_branch: gh-pages
+          build_dir: out
+          fqdn: react-v8.holt.courses
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
