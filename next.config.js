@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: "",
+  basePath: "/test-for-profile",
   images: {
     unoptimized: true,
   },
