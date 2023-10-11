@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const BASE_URL = "/test-for-profile"
+const BASE_URL = "";
 
 const nextConfig = {
   reactStrictMode: true,
